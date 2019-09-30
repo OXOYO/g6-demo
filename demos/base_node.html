@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>G6 DEMO - 内置节点</title>
+  <link rel="stylesheet" href="./style/main.css">
+</head>
+<body>
+  <div class="header">
+    <div class="title">G6 DEMO - 内置节点</div>
+    <div class="description">
+      <ol>
+        <li>创建画布实例</li>
+        <li>添加内置节点：circle</li>
+        <li>添加内置节点：rect</li>
+        <li>添加内置节点：ellipse</li>
+        <li>添加内置节点：image</li>
+      </ol>
+    </div>
+  </div>
+  <div class="body">
+    <!-- 画布容器 -->
+    <div id="container" class="container"></div>
+    <div class="code">
+      <pre>
+        <code>
+          // 1.创建画布实例
+          const graph = new G6.Graph({
+            // 容器ID
+            container: 'container',
+            width: 500,
+            height: 400
+          })
+          // 2.添加内置节点：circle
+          graph.addItem('node', {
+            x: 100,
+            y: 100,
+            shape: 'circle',
+            label: 'circle'
+          })
+          // 3.添加内置节点：rect
+          graph.addItem('node', {
+            x: 200,
+            y: 100,
+            shape: 'rect',
+            label: 'rect'
+          })
+          // 4.添加内置节点：ellipse
+          graph.addItem('node', {
+            x: 300,
+            y: 100,
+            size: [60, 30],
+            shape: 'ellipse',
+            label: 'ellipse'
+          })
+          // 5.添加内置节点：image
+          graph.addItem('node', {
+            x: 400,
+            y: 100,
+            shape: 'image',
+            img: './images/antv.svg',
+            label: 'image'
+          })
+        </code>
+      </pre>
+    </div>
+  </div>
+  <script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.g6-3.0.5-beta.12/build/g6.js"></script>
+  <script>
+    // 1.创建画布实例
+    const graph = new G6.Graph({
+      // 容器ID
+      container: 'container',
+      width: 500,
+      height: 400
+    })
+    // 2.添加内置节点：circle
+    graph.addItem('node', {
+      x: 100,
+      y: 100,
+      shape: 'circle',
+      label: 'circle'
+    })
+    // 3.添加内置节点：rect
+    graph.addItem('node', {
+      x: 200,
+      y: 100,
+      shape: 'rect',
+      label: 'rect'
+    })
+    // 4.添加内置节点：ellipse
+    graph.addItem('node', {
+      x: 300,
+      y: 100,
+      size: [60, 30],
+      shape: 'ellipse',
+      label: 'ellipse'
+    })
+    // 5.添加内置节点：image
+    graph.addItem('node', {
+      x: 400,
+      y: 100,
+      shape: 'image',
+      img: './images/antv.svg',
+      label: 'image'
+    })
+  </script>
+</body>
+</html>

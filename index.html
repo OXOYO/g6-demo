@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>G6 DEMO</title>
+  <style>
+    .page {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-content: flex-start;
+      flex-direction: row;
+      padding: 10px;
+      margin-bottom: 20px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    .page .left {
+      display: inline-block;
+      width: 200px;
+      height: 100%;
+      padding: 10px;
+      overflow-y: auto;
+      border-right: 1px solid #cccccc;
+      position: relative;
+    }
+    .page .left .title {
+      font-weight: bold;
+      color: #42b983;
+      margin-bottom: 10px;
+      padding: 5px 0;
+      border-bottom: 1px solid #cccccc;
+      cursor: pointer;
+      display: inline-block;
+      width: 100%;
+      text-decoration: none;
+      text-align: center;
+    }
+    .page .left .menu {
+      padding: 10px;
+      color: #304455;
+      font-size: 14px;
+    }
+    .menu .menu-item {
+      margin-bottom: 5px;
+      cursor: pointer;
+    }
+    .menu .menu-item:hover {
+    }
+    .page .left .footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 10px;
+      background: #ffffff;
+    }
+    .page .left .footer a {
+      color: #6a737d;
+      text-decoration: none;
+    }
+    .page .right {
+      display: inline-block;
+      flex: 1 1 auto;
+      height: 100%;
+      margin-left: 10px;
+    }
+    #iframe {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="left">
+      <a class="title" href="http://oxoyo.co/g6-demo/" target="_blank">G6 DEMO</a>
+      <div class="menu">
+        <div class="menu-item" path="start">起步</div>
+        <div class="menu-item" path="base_node">内置节点</div>
+        <div class="menu-item" path="base_edge">内置边</div>
+        <div class="menu-item" path="node_state">节点状态</div>
+        <div class="menu-item" path="edge_state">边状态</div>
+      </div>
+      <div class="footer">
+        <a href="https://github.com/OXOYO/g6-demo" target="_blank">Github</a>
+      </div>
+    </div>
+    <div class="right">
+      <iframe id="iframe" src="" frameborder="0" marginwidth="0" marginheight="0"></iframe>
+    </div>
+  </div>
+  <script>
+    let menuItem = document.querySelectorAll('.menu-item')
+    menuItem.forEach(item => {
+      item.addEventListener('click', function (event) {
+        let target = event.target
+        let path = target.getAttribute('path')
+        let src = './demos/' + path + '.html'
+        let iframe = document.querySelector('#iframe')
+        iframe.setAttribute('src', src)
+      })
+    })
+  </script>
+</body>
+</html>

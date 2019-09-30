@@ -1,0 +1,24 @@
+{
+  "name": "g6-demo",
+  "version": "1.0.0",
+  "description": "g6 demo",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OXOYO/g6-demo.git"
+  },
+  "keywords": [
+    "g6",
+    "g6-demo"
+  ],
+  "author": "OXOYO",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OXOYO/g6-demo/issues"
+  },
+  "homepage": "https://github.com/OXOYO/g6-demo#readme",
+  "dependencies": {}
+}

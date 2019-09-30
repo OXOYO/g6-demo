@@ -1,0 +1,52 @@
+body {
+    text-align: center;
+}
+
+
+.header {
+  display: block;
+  padding: 10px;
+}
+.header .title {
+  color: #273849;;
+  font-weight: bold;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #cccccc;
+  height: 30px;
+}
+.header .description {
+  text-align: left;
+  background: #f8f8f8;
+  color: #525252;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.body {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  flex-direction: row;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+/* 画布容器 */
+.container {
+  flex: 0 0 auto;
+  display: inline-block;
+  margin: 0 auto;
+  border: 1px solid rgba(0, 0, 0, .1);
+}
+
+.code {
+  flex: 1 1 auto;
+  background: #f8f8f8;
+  color: #525252;
+  text-align: left;
+  padding: 10px;
+  margin-left: 10px;
+  min-height: 400px;
+  max-height: 500px;
+  overflow: auto;
+}

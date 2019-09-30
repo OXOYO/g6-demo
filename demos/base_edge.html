@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>G6 DEMO - 内置边</title>
+  <link rel="stylesheet" href="./style/main.css">
+</head>
+<body>
+  <div class="header">
+    <div class="title">G6 DEMO - 内置边</div>
+    <div class="description">
+      <ol>
+        <li>创建画布实例</li>
+        <li>添加内置边：line</li>
+        <li>添加内置边：polyline</li>
+        <li>添加内置边：quadratic</li>
+        <li>添加内置边：cubic</li>
+        <li>添加内置边：loop</li>
+      </ol>
+    </div>
+  </div>
+  <div class="body">
+    <!-- 画布容器 -->
+    <div id="container" class="container"></div>
+    <div class="code">
+      <pre>
+        <code>
+          // 1.创建画布实例
+          const graph = new G6.Graph({
+            // 容器ID
+            container: 'container',
+            width: 500,
+            height: 400
+          })
+          // 2.添加内置边：line
+          graph.addItem('node', {
+            id: 'node011',
+            x: 50,
+            y: 50,
+            shape: 'circle',
+            label: '1-1',
+            size: [20, 20]
+          })
+          graph.addItem('node', {
+            id: 'node012',
+            x: 200,
+            y: 50,
+            shape: 'circle',
+            label: '1-2',
+            size: [20, 20]
+          })
+          graph.addItem('edge', {
+            source: 'node011',
+            target: 'node012',
+            shape: 'line',
+            label: 'line',
+            style: {
+              endArrow: true
+            }
+          })
+          // 3.添加内置边：polyline
+          graph.addItem('node', {
+            id: 'node021',
+            x: 50,
+            y: 100,
+            shape: 'circle',
+            label: '2-1',
+            size: [20, 20]
+          })
+          graph.addItem('node', {
+            id: 'node022',
+            x: 200,
+            y: 100,
+            shape: 'circle',
+            label: '2-2',
+            size: [20, 20]
+          })
+          graph.addItem('edge', {
+            source: 'node021',
+            target: 'node022',
+            shape: 'polyline',
+            label: 'polyline',
+            controlPoints: [
+              {
+                x: 50,
+                y: 70
+              },
+              {
+                x: 200,
+                y: 70
+              }
+            ],
+            style: {
+              endArrow: true
+            }
+          })
+          // 4.添加内置边：quadratic
+          graph.addItem('node', {
+            id: 'node031',
+            x: 50,
+            y: 150,
+            shape: 'circle',
+            label: '3-1',
+            size: [20, 20]
+          })
+          graph.addItem('node', {
+            id: 'node032',
+            x: 200,
+            y: 150,
+            shape: 'circle',
+            label: '3-2',
+            size: [20, 20]
+          })
+          graph.addItem('edge', {
+            source: 'node031',
+            target: 'node032',
+            shape: 'quadratic',
+            label: 'quadratic',
+            style: {
+              endArrow: true
+            }
+          })
+          // 5.添加内置边：cubic
+          graph.addItem('node', {
+            id: 'node041',
+            x: 50,
+            y: 200,
+            shape: 'circle',
+            label: '4-1',
+            size: [20, 20]
+          })
+          graph.addItem('node', {
+            id: 'node042',
+            x: 200,
+            y: 200,
+            shape: 'circle',
+            label: '4-2',
+            size: [20, 20]
+          })
+          graph.addItem('edge', {
+            source: 'node041',
+            target: 'node042',
+            shape: 'cubic',
+            label: 'cubic',
+            style: {
+              endArrow: true
+            }
+          })
+          // 6.添加内置边：loop
+          graph.addItem('node', {
+            id: 'node051',
+            x: 50,
+            y: 300,
+            shape: 'circle',
+            label: '5-1',
+            size: [20, 20]
+          })
+          graph.addItem('edge', {
+            source: 'node051',
+            target: 'node051',
+            shape: 'loop',
+            label: 'loop',
+            loopCfg: {
+              // 环与节点的相对位置：top top-right right bottom-right bottom bottom-left left top-left
+              position: 'top',
+              // 是否顺时针画环
+              clockwise: true
+            },
+            style: {
+              endArrow: true
+            }
+          })
+        </code>
+      </pre>
+    </div>
+  </div>
+  <script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.g6-3.0.5-beta.12/build/g6.js"></script>
+  <script>
+    // 1.创建画布实例
+    const graph = new G6.Graph({
+      // 容器ID
+      container: 'container',
+      width: 500,
+      height: 400
+    })
+    // 2.添加内置边：line
+    graph.addItem('node', {
+      id: 'node011',
+      x: 50,
+      y: 50,
+      shape: 'circle',
+      label: '1-1',
+      size: [20, 20]
+    })
+    graph.addItem('node', {
+      id: 'node012',
+      x: 200,
+      y: 50,
+      shape: 'circle',
+      label: '1-2',
+      size: [20, 20]
+    })
+    graph.addItem('edge', {
+      source: 'node011',
+      target: 'node012',
+      shape: 'line',
+      label: 'line',
+      style: {
+        endArrow: true
+      }
+    })
+    // 3.添加内置边：polyline
+    graph.addItem('node', {
+      id: 'node021',
+      x: 50,
+      y: 100,
+      shape: 'circle',
+      label: '2-1',
+      size: [20, 20]
+    })
+    graph.addItem('node', {
+      id: 'node022',
+      x: 200,
+      y: 100,
+      shape: 'circle',
+      label: '2-2',
+      size: [20, 20]
+    })
+    graph.addItem('edge', {
+      source: 'node021',
+      target: 'node022',
+      shape: 'polyline',
+      label: 'polyline',
+      controlPoints: [
+        {
+          x: 50,
+          y: 70
+        },
+        {
+          x: 200,
+          y: 70
+        }
+      ],
+      style: {
+        endArrow: true
+      }
+    })
+    // 4.添加内置边：quadratic
+    graph.addItem('node', {
+      id: 'node031',
+      x: 50,
+      y: 150,
+      shape: 'circle',
+      label: '3-1',
+      size: [20, 20]
+    })
+    graph.addItem('node', {
+      id: 'node032',
+      x: 200,
+      y: 150,
+      shape: 'circle',
+      label: '3-2',
+      size: [20, 20]
+    })
+    graph.addItem('edge', {
+      source: 'node031',
+      target: 'node032',
+      shape: 'quadratic',
+      label: 'quadratic',
+      style: {
+        endArrow: true
+      }
+    })
+    // 5.添加内置边：cubic
+    graph.addItem('node', {
+      id: 'node041',
+      x: 50,
+      y: 200,
+      shape: 'circle',
+      label: '4-1',
+      size: [20, 20]
+    })
+    graph.addItem('node', {
+      id: 'node042',
+      x: 200,
+      y: 200,
+      shape: 'circle',
+      label: '4-2',
+      size: [20, 20]
+    })
+    graph.addItem('edge', {
+      source: 'node041',
+      target: 'node042',
+      shape: 'cubic',
+      label: 'cubic',
+      style: {
+        endArrow: true
+      }
+    })
+    // 6.添加内置边：loop
+    graph.addItem('node', {
+      id: 'node051',
+      x: 50,
+      y: 300,
+      shape: 'circle',
+      label: '5-1',
+      size: [20, 20]
+    })
+    graph.addItem('edge', {
+      source: 'node051',
+      target: 'node051',
+      shape: 'loop',
+      label: 'loop',
+      loopCfg: {
+        // 环与节点的相对位置：top top-right right bottom-right bottom bottom-left left top-left
+        position: 'top',
+        // 是否顺时针画环
+        clockwise: true
+      },
+      style: {
+        endArrow: true
+      }
+    })
+  </script>
+</body>
+</html>
